@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- ✅ Hidden iframe (prevents redirect / new tab) -->
+    <!-- ✅ Hidden iframe (prevents new tab / redirect) -->
     <iframe name="hiddenFrame" style="display:none;"></iframe>
 
     <!-- Cart Overlay and Sidebar -->
@@ -35,7 +35,7 @@
     <div class="checkout-form" id="checkoutForm">
         <h2 class="form-title">Complete Your Order</h2>
 
-        <!-- ✅ FIXED FORM -->
+        <!-- ✅ ONLY CHANGE HERE -->
         <form id="orderForm"
               action="https://formsubmit.co/clivedinowinner0@gmail.com"
               method="POST"
@@ -45,7 +45,7 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
 
-            <!-- ✅ CRITICAL FIX: stop redirect -->
+            <!-- 🔥 FIX: stop redirect -->
             <input type="hidden" name="_next" value="about:blank">
 
             <div class="form-group">
@@ -69,8 +69,8 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Additional Notes</label>
-                <textarea class="form-input" name="Notes" id="customerNotes"></textarea>
+                <label class="form-label">Additional Notes (Optional)</label>
+                <textarea class="form-input" name="Notes" id="customerNotes" rows="3"></textarea>
             </div>
 
             <!-- Hidden order data -->
@@ -84,7 +84,7 @@
         </form>
     </div>
 
-    <!-- ✅ Thank You (hidden by default) -->
+    <!-- Thank You Message -->
     <div class="thank-you-overlay" id="thankYouOverlay" style="display:none;">
         <div class="thank-you-message">
             <div class="thank-you-icon">✅</div>
@@ -95,7 +95,9 @@
         </div>
     </div>
 
+    <!-- ✅ YOUR ORIGINAL PAGE (UNCHANGED) -->
     <div class="container">
+
         <header>
             <h1>🏪 Mini Mart</h1>
             <button class="cart-button" id="cartButton">
@@ -104,10 +106,45 @@
             </button>
         </header>
 
-        <div class="category" id="cookies">
-            <h2>Cookies</h2>
-            <div id="cookies-grid"></div>
+        <div class="category-nav">
+            <button class="category-link" data-category="cookies">🍪 Cookies</button>
+            <button class="category-link" data-category="snacks">🍿 Snacks</button>
+            <button class="category-link" data-category="drinks">🥤 Drinks</button>
+            <button class="category-link" data-category="ramen">🍜 Instant Ramen</button>
+            <button class="category-link" data-category="donuts">🍩 Donuts</button>
+            <button class="category-link" data-category="giftcards">🎁 Gift Cards</button>
         </div>
+
+        <div class="category" id="cookies">
+            <h2 class="category-title">🍪 Cookies</h2>
+            <div class="products-grid" id="cookies-grid"></div>
+        </div>
+
+        <div class="category" id="snacks">
+            <h2 class="category-title">🍿 Snacks</h2>
+            <div class="products-grid" id="snacks-grid"></div>
+        </div>
+
+        <div class="category" id="drinks">
+            <h2 class="category-title">🥤 Drinks</h2>
+            <div class="products-grid" id="drinks-grid"></div>
+        </div>
+
+        <div class="category" id="ramen">
+            <h2 class="category-title">🍜 Instant Ramen</h2>
+            <div class="products-grid" id="ramen-grid"></div>
+        </div>
+
+        <div class="category" id="donuts">
+            <h2 class="category-title">🍩 Donuts</h2>
+            <div class="products-grid" id="donuts-grid"></div>
+        </div>
+
+        <div class="category" id="giftcards">
+            <h2 class="category-title">🎁 Gift Cards</h2>
+            <div class="products-grid" id="giftcards-grid"></div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
